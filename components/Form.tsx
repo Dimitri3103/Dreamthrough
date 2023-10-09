@@ -46,7 +46,7 @@ const InputContact = styled('input')(({ theme }) => ({
         border: "1px solid #F7931E",
     },
     paddingLeft: theme.spacing(2),
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
         height: "55px",
         marginTop: theme.spacing(2),
         width: "100%",

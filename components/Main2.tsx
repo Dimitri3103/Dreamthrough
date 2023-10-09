@@ -14,13 +14,13 @@ const StyledMain2 = styled(Grid)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
     fontStyle: "normal",
     fontWeight: 600,
-    fontSize: "30px",
+    fontSize: "25px",
     color: "#011A45",
     lineHeight: "normal",
     width: "100%",
     textAlign: "center",
     [theme.breakpoints.up('sm')]: {
-        fontSize: "40px",
+        fontSize: "35px",
         width: "90%",
     },
     [theme.breakpoints.up('md')]: {
@@ -34,8 +34,8 @@ const Description = styled(Typography)(({ theme }) => ({
     fontSize: "18px",
     color: "#011A45",
     lineHeight: "28px",
-    width: "100%",
-    textAlign: "center",
+    width: "90%",
+    textAlign: "justify",
     marginBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
         width: "90%",
@@ -57,34 +57,66 @@ const RedBox = styled('div')(({ theme }) => ({
         bottom: 0,
         left: 0,
         right: 0,
-        borderTop: "160px solid #A22023",
+        borderTop: "170px solid #A22023",
         borderLeft: "50px solid transparent",
-    }
-}));
-const Space = styled('div')(({ theme }) => ({
+    },
     marginTop: theme.spacing(6),
     marginBottom: theme.spacing(6),
     [theme.breakpoints.up('sm')]: {
-        marginTop: theme.spacing(10),
-        marginBottom: theme.spacing(10),
+        marginTop: theme.spacing(7),
+        marginBottom: theme.spacing(7),
+        '&::before': {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            borderTop: "180px solid #A22023",
+            borderLeft: "50px solid transparent",
+        },
     },
     [theme.breakpoints.up('md')]: {
         marginTop: theme.spacing(7),
         marginBottom: theme.spacing(7),
-    }
+        '&::before': {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            borderTop: "225px solid #A22023",
+            borderLeft: "50px solid transparent",
+        },
+    },
+    [theme.breakpoints.up('lg')]: {
+        marginTop: theme.spacing(7),
+        marginBottom: theme.spacing(7),
+        '&::before': {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            borderTop: "180px solid #A22023",
+            borderLeft: "50px solid transparent",
+        },
+    },
+
 }));
 const SpaceText = styled('div')(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     position: "relative",
+    top: theme.spacing(1),
     paddingLeft: theme.spacing(8),
     [theme.breakpoints.up('sm')]: {
         paddingLeft: theme.spacing(10),
-        top: theme.spacing(2.5)
     },
     [theme.breakpoints.up('md')]: {
         paddingLeft: theme.spacing(10),
-        top: theme.spacing(1)
     }
 }));
 const TitleRedBox = styled(Typography)(({ theme }) => ({
@@ -96,14 +128,12 @@ const TitleRedBox = styled(Typography)(({ theme }) => ({
     textDecorationLine: "underline",
     paddingLeft: theme.spacing(10),
     position: "relative",
+    top: theme.spacing(1),
     [theme.breakpoints.up('sm')]: {
         fontSize: "22px",
-        top: theme.spacing(1.5)
     },
     [theme.breakpoints.up('md')]: {
-        lineHeight: "50px",
-        fontSize: "30px",
-        top: theme.spacing(0.5)
+        fontSize: "28px",
     }
 }));
 const TextRedBox = styled(Typography)(({ theme }) => ({
@@ -113,11 +143,10 @@ const TextRedBox = styled(Typography)(({ theme }) => ({
     color: "#FFF",
     lineHeight: "normal",
     [theme.breakpoints.up('sm')]: {
-        fontSize: "17px",
+        fontSize: "16px",
     },
     [theme.breakpoints.up('md')]: {
-        fontSize: "20px",
-        lineHeight: "30px",
+        fontSize: "18px",
     }
 }));
 
@@ -150,7 +179,6 @@ export default function Main2() {
                         <PlayArrowIcon style={{ color: "#FFF" }} />&nbsp;<TextRedBox>ALL TEST CONCEPTS AND TONS OF PRACTICE TESTS</TextRedBox>
                     </SpaceText>
                 </RedBox>
-                <Space />
                 <RedBox>
                     <TitleRedBox>24/7 PERSONAL COACH AVAILABILITY</TitleRedBox>
                     <SpaceText>
@@ -163,7 +191,6 @@ export default function Main2() {
                         <PlayArrowIcon style={{ color: "#FFF" }} />&nbsp;<TextRedBox>QUESTIONS & ANSWERS</TextRedBox>
                     </SpaceText>
                 </RedBox>
-                <Space />
                 <RedBox>
                     <TitleRedBox>DATA ANALYTICS TO MONITOR PROGRESS</TitleRedBox>
                     <SpaceText>
