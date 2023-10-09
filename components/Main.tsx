@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react'
-import { Grid, Typography, Button } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
-import Senior from '@/assets/images/SeniorTasse.png'
+import Senior from '@/assets/images/seniortasse.png'
 import { useRouter } from "next/navigation";
 
 const StyledMain = styled(Grid)(({ theme }) => ({
