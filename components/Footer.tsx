@@ -3,6 +3,7 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import { styled } from '@mui/material/styles';
+import Link from 'next/link';
 
 const StyledFooter = styled(Grid)(({ theme }) => ({
     background: "#FFF8E7",
@@ -36,7 +37,7 @@ export default function Footer() {
                 </TextFooter>
                 <br />
                 <TextFooter>
-                    Powered By : <Tentee>TENTEE GLOBAL</Tentee>
+                    Powered By : <Link href="https://outstrip.tech/"><Tentee>outstrip</Tentee></Link>
                 </TextFooter>
             </Grid>
 

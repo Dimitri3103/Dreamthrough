@@ -4,7 +4,7 @@ import React from 'react'
 import { Grid, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
-import Senior from '@/assets/images/seniortasse.png'
+import Senior from '@/assets/seniortasse.png'
 import { useRouter } from "next/navigation";
 
 const StyledMain = styled(Grid)(({ theme }) => ({

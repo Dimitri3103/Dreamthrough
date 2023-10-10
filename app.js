@@ -1,17 +1,25 @@
 const { parse } = require('url')
 const next = require('next')
+const fs = require('fs');
  
 const dev = process.env.NODE_ENV !== 'production'
 const hostname = 'localhost'
 const port = 443
 var http = require('http');
+const https = require('https');
+
+// Start the HTTPS server
+const httpsOptions = {
+  key: fs.readFileSync('/etc/letsencrypt/live/dreamthrough.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/dreamthrough.com/fullchain.pem'),
+};
 
 // when using middleware `hostname` and `port` must be provided below
 const app = next({ dev, hostname, port })
 const handle = app.getRequestHandler()
  
 app.prepare().then(() => {
-  http.createServer(async (req, res) => {
+  https.createServer(httpsOptions, async (req, res) => {
     try {
       // Be sure to pass `true` as the second argument to `url.parse`.
       // This tells it to parse the query portion of the URL.
@@ -36,6 +44,6 @@ app.prepare().then(() => {
       process.exit(1)
     })
     .listen(port, () => {
-      console.log(`> Ready on http://${hostname}:${port}`)
+      console.log(`> Ready on https://${hostname}:${port}`)
     })
 })
