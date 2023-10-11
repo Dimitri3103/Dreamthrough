@@ -60,7 +60,7 @@ const Bio = styled(Typography)(({ theme }) => ({
     fontSize: "16px",
     color: "#FFF",
     lineHeight: "25px",
-    textAlign: "center",
+    textAlign: "justify",
     width: "90%",
     [theme.breakpoints.up('sm')]: {
         fontSize: "18px",
@@ -150,6 +150,31 @@ export const DivResp = styled('div')(({ theme }) => ({
     justifyContent: "center",
     alignItems: "center",
 }));
+const DivImg = styled('div')(({ theme }) => ({
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    [theme.breakpoints.up('sm')]: {
+        display: "none",
+    }
+}));
+const DivImgResp = styled('div')(({ theme }) => ({
+    display: "none",
+    [theme.breakpoints.up('sm')]: {
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+    }
+}));
+const StyledImgResp = {
+    width: "220px",
+    height: "290px",
+    border: "2px solid #FFF",
+}
 
 export default function Main() {
     const router = useRouter()
@@ -157,14 +182,22 @@ export default function Main() {
         <StyledMain container justifyContent="center" alignItems="center">
             <Grid item container xs={12} sm={6} justifyContent="center" alignItems="center">
                 <Grid item xs={12} sm={12} md={6}>
-                    <DivResp>
+                    <DivImg>
+                        <Image
+                            src={Senior}
+                            alt="SeniorTasse"
+                            style={StyledImgResp}
+                            priority={true}
+                        />
+                    </DivImg>
+                    <DivImgResp>
                         <Image
                             src={Senior}
                             alt="SeniorTasse"
                             style={StyledImg}
                             priority={true}
                         />
-                    </DivResp>
+                    </DivImgResp>
 
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
